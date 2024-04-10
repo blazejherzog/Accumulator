@@ -43,10 +43,10 @@ class AccumulatorImplTest {
     @ParameterizedTest
     @MethodSource("provideExpectedResultAndValuesToAccumulate")
     void shouldAccumulateMoreThanTwoValuesAndGetTotalSum(int expectedResult, int... values) {
-        //when
+        // when
         accumulator.accumulate(values);
 
-        //then
+        // then
         assertEquals(expectedResult, accumulator.getTotal());
     }
 
@@ -56,17 +56,17 @@ class AccumulatorImplTest {
         // when
         accumulator.accumulate(value);
 
-        //then
+        // then
         assertEquals(value, accumulator.getTotal());
     }
 
     @Test
     void shouldNotResetTotalSumWhenAccumulatingMoreThanOnce() {
-        //when
+        // when
         accumulator.accumulate(2, 3, 7);
         accumulator.accumulate(100);
 
-        //then
+        // then
         assertEquals(112, accumulator.getTotal());
     }
 
@@ -92,7 +92,7 @@ class AccumulatorImplTest {
         // when
         accumulator.accumulate(5, 10);
 
-        //then
+        // then
         assertEquals(15, accumulator.getTotal());
     }
 
